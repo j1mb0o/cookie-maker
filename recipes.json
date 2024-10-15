@@ -1,0 +1,691 @@
+[
+  {
+    "index": 1,
+    "name": "healthy-pumpkin-cookies",
+    "url": "https://chocolatecoveredkatie.com/healthy-pumpkin-cookies",
+    "ingredients": [
+      "3/4 cup quick oats (for grain-free, try these Keto Cookies)",
+      "1/2 cup oat flour",
+      "1/4 cup sugar, unrefined or erythritol if desired",
+      "3-5 tbsp mini chocolate chips",
+      "1/4 tsp cinnamon",
+      "1/4 tsp pumpkin pie spice, or additional cinnamon",
+      "1/4 tsp salt",
+      "1/4 tsp baking soda",
+      "1/3 cup canned pumpkin, or mashed sweet potato",
+      "1/3 cup almond butter, or regular butter spread",
+      "1/2 tsp pure vanilla extract"
+    ]
+  },
+  {
+    "index": 2,
+    "name": "microwave-cookies-chocolate-chip",
+    "url": "https://chocolatecoveredkatie.com/microwave-cookies-chocolate-chip",
+    "ingredients": [
+      "1/4 cup white, spelt, or oat flour (a keto option is listed above in this post)",
+      "1/8 tsp baking soda",
+      "1/16 tsp salt",
+      "2 tbsp sugar, unrefined if desired",
+      "1 – 3 tbsp chocolate chips",
+      "1/2 tbsp milk of choice",
+      "1/16 tsp pure vanilla extract",
+      "1/2 tbsp oil or softened nut butter"
+    ]
+  },
+  {
+    "index": 3,
+    "name": "nutritional-info-chocolate-macadamia-cookies",
+    "url": "https://chocolatecoveredkatie.com/nutritional-info-chocolate-macadamia-cookies",
+    "ingredients": []
+  },
+  {
+    "index": 4,
+    "name": "peanut-butter-blossom-cookies",
+    "url": "https://chocolatecoveredkatie.com/2020/04/13/peanut-butter-blossom-cookies",
+    "ingredients": [
+      "1/2 cup peanut butter,  or allergy-friendly sub",
+      "3/4 tsp baking soda",
+      "3 tbsp flour (spelt, white, oat, sorghum, and rice all work)",
+      "1/3 cup sugar, unrefined if desired",
+      "2 tbsp  applesauce or milk of choice",
+      "1/2 tsp pure vanilla extract",
+      "1/8 tsp salt",
+      "1 chocolate bar of choice"
+    ]
+  },
+  {
+    "index": 5,
+    "name": "vegan-nilla-wafers",
+    "url": "https://chocolatecoveredkatie.com/vegan-nilla-wafers",
+    "ingredients": [
+      "3/4 cup spelt, white, or oat flour (for flourless, try these Keto Cookies)",
+      "1/4 tsp each: salt and baking soda",
+      "1/4 cup sugar, unrefined if desired",
+      "3 tbsp vegan butter or oil",
+      "4 tsp milk of choice",
+      "1 1/2 tsp pure vanilla extract"
+    ]
+  },
+  {
+    "index": 6,
+    "name": "peanut-butter-no-bake-cookies",
+    "url": "https://chocolatecoveredkatie.com/2020/04/05/peanut-butter-no-bake-cookies",
+    "ingredients": [
+      "1 2/3  cups oats (for keto, make Keto Peanut Butter Cookies)",
+      "1/4 tsp salt",
+      "1/2  cup peanut butter or allergy friendly sub",
+      "1/2 cup honey or pure maple syrup or agave",
+      "3 tbsp butter or coconut oil (or 3 tbsp extra nut butter or milk of choice)"
+    ]
+  },
+  {
+    "index": 7,
+    "name": "macaroons-recipe-coconut-cookies",
+    "url": "https://chocolatecoveredkatie.com/2018/12/06/macaroons-recipe-coconut-cookies",
+    "ingredients": [
+      "1 cup unsweetened shredded coconut",
+      "1 tbsp almond meal or flour of choice",
+      "1/2 cup + 1 tbsp milk of choice or coconutmilk",
+      "just over 1/16 tsp salt",
+      "3 1/2 tbsp pure maple syrup, honey, or agave (a keto option is listed earlier in the post)",
+      "1/4 tsp pure vanilla or coconut extract"
+    ]
+  },
+  {
+    "index": 8,
+    "name": "keto-thin-mints-low-carb",
+    "url": "https://chocolatecoveredkatie.com/keto-thin-mints-low-carb",
+    "ingredients": [
+      "2 tbsp cocoa powder",
+      "1 cup almond flour",
+      "1/8 tsp salt",
+      "1 tsp pure vanilla extract",
+      "1/8 tsp pure peppermint extract",
+      "pinch uncut stevia OR 3 tbsp pure maple syrup",
+      "Only if using stevia, add 3 tbsp water",
+      "1/2 cup chocolate chips or sugar free chocolate chips",
+      "1/4 tsp additional pure peppermint extract",
+      "optional 2 tsp oil"
+    ]
+  },
+  {
+    "index": 9,
+    "name": "macaroons-recipe-coconut-cookies",
+    "url": "https://chocolatecoveredkatie.com/macaroons-recipe-coconut-cookies",
+    "ingredients": [
+      "1 cup unsweetened shredded coconut",
+      "1 tbsp almond meal or flour of choice",
+      "1/2 cup + 1 tbsp milk of choice or coconutmilk",
+      "just over 1/16 tsp salt",
+      "3 1/2 tbsp pure maple syrup, honey, or agave (a keto option is listed earlier in the post)",
+      "1/4 tsp pure vanilla or coconut extract"
+    ]
+  },
+  {
+    "index": 10,
+    "name": "chocolate-crinkle-cookies-recipe",
+    "url": "https://chocolatecoveredkatie.com/chocolate-crinkle-cookies-recipe",
+    "ingredients": [
+      "1 cup flour (For low carb, try these Keto Chocolate Cookies)",
+      "6 tbsp cocoa powder",
+      "1/2 cup sugar or coconut sugar",
+      "1/4 tsp baking soda",
+      "1/4 tsp salt",
+      "1/4 cup salted butter or vegan butter",
+      "1 egg or 4 tbsp milk of choice",
+      "1 tsp pure vanilla extract",
+      "1/3 cup chocolate chips (optional)",
+      "powdered sugar or sugar free alternative"
+    ]
+  },
+  {
+    "index": 11,
+    "name": "the-best-healthy-chocolate-chip-cookies",
+    "url": "https://chocolatecoveredkatie.com/2012/05/27/the-best-healthy-chocolate-chip-cookies",
+    "ingredients": [
+      "1 cup oat flour",
+      "1/2 tsp baking soda",
+      "1/4 tsp salt",
+      "4 tbsp coconut sugar or brown sugar",
+      "4 tbsp white sugar or additional coconut sugar",
+      "1/3 cup chocolate chips or more if desired",
+      "1/3 cup chopped nuts optional)",
+      "1 tsp pure vanilla extract",
+      "2 tbsp vegetable or melted coconut oil",
+      "3-5 tbsp milk of choice, as needed"
+    ]
+  },
+  {
+    "index": 12,
+    "name": "coconut-flour-cookies",
+    "url": "https://chocolatecoveredkatie.com/coconut-flour-cookies",
+    "ingredients": [
+      "1/3 cup coconut flour",
+      "1/8 tsp salt",
+      "2 1/2 tbsp liquid sweetener (such as maple syrup, honey, or keto syrup)",
+      "2 eggs or flax eggs",
+      "1/4 cup melted coconut oil or butter",
+      "1/2 cup chocolate chips, optional"
+    ]
+  },
+  {
+    "index": 13,
+    "name": "keto-peanut-butter-cookies",
+    "url": "https://chocolatecoveredkatie.com/keto-peanut-butter-cookies",
+    "ingredients": [
+      "1/2 cup peanut butter, or nut butter of choice",
+      "1 tbsp milk of choice",
+      "2/3 cup finely ground almond flour",
+      "3 tbsp powdered erythritol or powdered sugar",
+      "1/8 tsp salt",
+      "1/8 tsp baking soda"
+    ]
+  },
+  {
+    "index": 14,
+    "name": "chocolate-peanut-butter-cookies",
+    "url": "https://chocolatecoveredkatie.com/chocolate-peanut-butter-cookies",
+    "ingredients": [
+      "1 cup spelt, white, or oat flour (For low carb, try these Keto Chocolate Cookies)",
+      "6 tbsp cocoa powder",
+      "6 tbsp sugar, unrefined if desired",
+      "¼ tsp baking soda",
+      "¼ tsp salt",
+      "1/4 cup oil",
+      "3 tbsp milk of choice",
+      "2 tbsp pure maple syrup, honey, or agave",
+      "1 tsp pure vanilla extract",
+      "mini or regular chocolate chips, optional",
+      "peanut butter or allergy-friendly sub"
+    ]
+  },
+  {
+    "index": 15,
+    "name": "secret-peanut-butter-cookies",
+    "url": "https://chocolatecoveredkatie.com/2011/12/11/secret-peanut-butter-cookies",
+    "ingredients": [
+      "1/2 cup peanut butter, or allergy friendly sub",
+      "2 tbsp applesauce (or make these Keto Peanut Butter Cookies)",
+      "3/4 tsp baking soda",
+      "3 tbsp flour (spelt, white, oat, sorghum, rice all work)",
+      "1/2 tsp pure vanilla extract",
+      "1/3 cup sugar, unrefined if desired",
+      "1/8 tsp salt"
+    ]
+  },
+  {
+    "index": 16,
+    "name": "chocolate-no-bake-cookies",
+    "url": "https://chocolatecoveredkatie.com/2019/06/03/chocolate-no-bake-cookies",
+    "ingredients": [
+      "1/4 cup cocoa powder",
+      "2 cups quick oats (For keto no-bakes, try these Fat Bombs)",
+      "1/4 tsp salt",
+      "1/2 cup peanut butter or allergy-friendly sub",
+      "1/2 cup pure maple syrup, honey, or agave (or 2/3 cup sugar and 1/2 cup milk of choice)",
+      "1/4 cup butter or coconut oil",
+      "optional 1/4 tsp pure vanilla extract",
+      "optional handful mini chocolate chips, shredded coconut, etc."
+    ]
+  },
+  {
+    "index": 17,
+    "name": "flourless-chocolate-chip-cookies",
+    "url": "https://chocolatecoveredkatie.com/flourless-chocolate-chip-cookies",
+    "ingredients": [
+      "1 1/2 cups rolled oats (for grain free, try these Keto Cookies)",
+      "1/2 tsp baking soda",
+      "1/4 tsp salt",
+      "1/2 cup sugar or unrefined sugar",
+      "1/3 cup chocolate chips",
+      "2 tbsp butter or oil",
+      "2 1/2 tbsp milk of choice"
+    ]
+  },
+  {
+    "index": 18,
+    "name": "healthy-girl-scout-cookies-tagalongs",
+    "url": "https://chocolatecoveredkatie.com/healthy-girl-scout-cookies-tagalongs",
+    "ingredients": [
+      "1 cup almond flour",
+      "1/8 tsp salt, just over level",
+      "1/8 tsp baking soda",
+      "2 tbsp pure maple syrup or honey OR stevia to taste",
+      "1 1/2 tbsp veg or melted coconut oil",
+      "1 tsp pure vanilla extract",
+      "20 tsp peanut butter or allergy-friendly sub",
+      "1/2 cup chocolate chips or Sugar Free Chocolate Chips"
+    ]
+  },
+  {
+    "index": 19,
+    "name": "peanut-butter-no-bake-cookies",
+    "url": "https://chocolatecoveredkatie.com/peanut-butter-no-bake-cookies",
+    "ingredients": [
+      "1 2/3  cups oats (for keto, make Keto Peanut Butter Cookies)",
+      "1/4 tsp salt",
+      "1/2  cup peanut butter or allergy friendly sub",
+      "1/2 cup honey or pure maple syrup or agave",
+      "3 tbsp butter or coconut oil (or 3 tbsp extra nut butter or milk of choice)"
+    ]
+  },
+  {
+    "index": 20,
+    "name": "the-best-healthy-chocolate-chip-cookies",
+    "url": "https://chocolatecoveredkatie.com/the-best-healthy-chocolate-chip-cookies",
+    "ingredients": [
+      "1 cup oat flour",
+      "1/2 tsp baking soda",
+      "1/4 tsp salt",
+      "4 tbsp coconut sugar or brown sugar",
+      "4 tbsp white sugar or additional coconut sugar",
+      "1/3 cup chocolate chips or more if desired",
+      "1/3 cup chopped nuts optional)",
+      "1 tsp pure vanilla extract",
+      "2 tbsp vegetable or melted coconut oil",
+      "3-5 tbsp milk of choice, as needed"
+    ]
+  },
+  {
+    "index": 21,
+    "name": "protein-cookies",
+    "url": "https://chocolatecoveredkatie.com/protein-cookies",
+    "ingredients": [
+      "1/2 cup nut butter of choice",
+      "1/2 cup protein powder (64g)",
+      "2 tbsp sweetener of choice",
+      "1/8 tsp salt",
+      "1/2 cup chocolate chips, optional"
+    ]
+  },
+  {
+    "index": 22,
+    "name": "tahini-cookies-recipe",
+    "url": "https://chocolatecoveredkatie.com/tahini-cookies-recipe",
+    "ingredients": [
+      "1 cup flour (white, spelt, or oat flour. For low carb, make these Keto Cookies)",
+      "1/2 tsp baking soda",
+      "1/4 tsp salt",
+      "1/2 cup sugar or packed coconut sugar",
+      "1/2 cup chocolate chips",
+      "1/3 cup tahini",
+      "2 1/2 tbsp milk of choice"
+    ]
+  },
+  {
+    "index": 23,
+    "name": "chocolate-snowball-cookies",
+    "url": "https://chocolatecoveredkatie.com/chocolate-snowball-cookies",
+    "ingredients": [
+      "3/4 cup white, spelt, or oat flour (a keto version is linked above)",
+      "1/4 cup unsweetened cocoa powder",
+      "1/4 cup finely chopped walnuts or pecans (for nut-free: Chocolate Brownie Cookies)",
+      "1/2 cup butter or coconut oil",
+      "1/4 cup powdered sugar (a date-sweetened version is also linked above)",
+      "1/4 cup mini chocolate chips or finely chopped chocolate",
+      "optional additional powdered sugar for rolling"
+    ]
+  },
+  {
+    "index": 24,
+    "name": "breakfast-cookies-recipe",
+    "url": "https://chocolatecoveredkatie.com/2018/01/18/breakfast-cookies-recipe",
+    "ingredients": [
+      "1/2 cup rolled oats",
+      "scant 1/2 cup applesauce or mashed banana",
+      "1/4 cup almond or cashew butter OR allergy-friendly sub",
+      "1/2 tsp pure vanilla extract",
+      "1/16 tsp salt",
+      "2-3 tbsp mini chocolate chips or sugar free chocolate chips",
+      "2 1/2 tbsp freeze-dried raspberries OR 2 tbsp dried fruit or more chocolate chips",
+      "optional 2 tbsp sugar or pinch stevia (see note below)",
+      "optional add-ins, such as chia seeds, shredded coconut, etc."
+    ]
+  },
+  {
+    "index": 25,
+    "name": "chocolate-coconut-cookies",
+    "url": "https://chocolatecoveredkatie.com/chocolate-coconut-cookies",
+    "ingredients": [
+      "1 tbsp flour  of choice or protein powder",
+      "1 1/2 tbsp cocoa powder",
+      "1 cup shredded coconut (must be unsweetened, full fat)",
+      "1/2 cup milk of choice",
+      "1/4 cup pure maple syrup or honey or agave (for sugar free, see note below)",
+      "1/4 tsp pure vanilla extract",
+      "1/16 tsp salt"
+    ]
+  },
+  {
+    "index": 26,
+    "name": "peanut-butter-blossom-cookies",
+    "url": "https://chocolatecoveredkatie.com/peanut-butter-blossom-cookies",
+    "ingredients": [
+      "1/2 cup peanut butter,  or allergy-friendly sub",
+      "3/4 tsp baking soda",
+      "3 tbsp flour (spelt, white, oat, sorghum, and rice all work)",
+      "1/3 cup sugar, unrefined if desired",
+      "2 tbsp  applesauce or milk of choice",
+      "1/2 tsp pure vanilla extract",
+      "1/8 tsp salt",
+      "1 chocolate bar of choice"
+    ]
+  },
+  {
+    "index": 27,
+    "name": "vegan-sugar-cookies",
+    "url": "https://chocolatecoveredkatie.com/2020/02/06/vegan-sugar-cookies",
+    "ingredients": [
+      "1 1/2 cups flour (spelt, white, or oat flour) Or make these Keto Cookies",
+      "3/4 tsp baking soda",
+      "1/2 tsp baking powder",
+      "1/2 tsp salt",
+      "1/2 cup sugar (unrefined if desired)",
+      "6 tbsp oil or melted vegan butter",
+      "1 1/2 tbsp milk of choice",
+      "1 tsp pure vanilla extract"
+    ]
+  },
+  {
+    "index": 28,
+    "name": "keto-cookies-recipe",
+    "url": "https://chocolatecoveredkatie.com/keto-cookies-recipe",
+    "ingredients": [
+      "1 cup finely ground almond flour",
+      "2-4 tbsp chocolate chips or sugar free chocolate chips",
+      "2 tbsp powdered sugar or powdered erythritol OR stevia equivalent",
+      "scant 1/4 tsp salt",
+      "1/8 tsp baking soda",
+      "2 tbsp coconut oil",
+      "1 tsp pure vanilla extract",
+      "2-3 tsp milk of choice, as needed"
+    ]
+  },
+  {
+    "index": 29,
+    "name": "secret-peanut-butter-cookies",
+    "url": "https://chocolatecoveredkatie.com/secret-peanut-butter-cookies",
+    "ingredients": [
+      "1/2 cup peanut butter, or allergy friendly sub",
+      "2 tbsp applesauce (or make these Keto Peanut Butter Cookies)",
+      "3/4 tsp baking soda",
+      "3 tbsp flour (spelt, white, oat, sorghum, rice all work)",
+      "1/2 tsp pure vanilla extract",
+      "1/3 cup sugar, unrefined if desired",
+      "1/8 tsp salt"
+    ]
+  },
+  {
+    "index": 30,
+    "name": "snowball-cookies-that-melt-in-your-mouth",
+    "url": "https://chocolatecoveredkatie.com/snowball-cookies-that-melt-in-your-mouth",
+    "ingredients": [
+      "2 cups flour (white, spelt, ww pastry, or Bob's gf work)",
+      "1/2 cup finely chopped walnuts or almonds or pecans",
+      "1 cup butter or coconut oil",
+      "1/2 cup powdered sugar or sugar free powdered sugar",
+      "optional additional powdered sugar or cocoa powder, for rolling"
+    ]
+  },
+  {
+    "index": 31,
+    "name": "vegan-sugar-cookies",
+    "url": "https://chocolatecoveredkatie.com/vegan-sugar-cookies",
+    "ingredients": [
+      "1 1/2 cups flour (spelt, white, or oat flour) Or make these Keto Cookies",
+      "3/4 tsp baking soda",
+      "1/2 tsp baking powder",
+      "1/2 tsp salt",
+      "1/2 cup sugar (unrefined if desired)",
+      "6 tbsp oil or melted vegan butter",
+      "1 1/2 tbsp milk of choice",
+      "1 tsp pure vanilla extract"
+    ]
+  },
+  {
+    "index": 32,
+    "name": "3-ingredient-peanut-butter-bites",
+    "url": "https://chocolatecoveredkatie.com/3-ingredient-peanut-butter-bites",
+    "ingredients": [
+      "1 1/2 cup peanut butter or allergy friendly sub",
+      "2/3 cup coconut flour, oat flour, or protein powder (Here's a coconut-free version)",
+      "1/3 cup liquid sweetener (such as pure maple syrup, honey, or keto syrup)",
+      "optional 3 oz chocolate melted with 4 tsp oil if desired for a smoother sauce"
+    ]
+  },
+  {
+    "index": 33,
+    "name": "vegan-levain-chocolate-chip-cookies",
+    "url": "https://chocolatecoveredkatie.com/vegan-levain-chocolate-chip-cookies",
+    "ingredients": [
+      "1 cup white, spelt, or oat flour (for flourless, try these Keto Cookies)",
+      "1/2 tsp baking soda",
+      "1/4 tsp salt",
+      "1/4 cup brown sugar, unrefined if desired",
+      "3 tbsp regular sugar, unrefined if desired",
+      "2/3 cup chocolate chips",
+      "3 tbsp butter (such as Melt vegan)",
+      "1 1/2 tbsp milk of choice"
+    ]
+  },
+  {
+    "index": 34,
+    "name": "cookie-dough-balls",
+    "url": "https://chocolatecoveredkatie.com/cookie-dough-balls",
+    "ingredients": [
+      "1/2 cup nut butter of choice",
+      "1/2 cup oat flour or protein powder",
+      "2 tbsp sweetener of choice",
+      "1/8 tsp salt",
+      "1/4 cup chocolate chips"
+    ]
+  },
+  {
+    "index": 35,
+    "name": "cream-cheese-stuffed-cinnamon-sugar-pillow-cookies",
+    "url": "https://chocolatecoveredkatie.com/2017/11/30/cream-cheese-stuffed-cinnamon-sugar-pillow-cookies",
+    "ingredients": [
+      "1 1/2 cup flour (spelt, white, or oat)",
+      "3/4 tsp baking soda",
+      "1/2 tsp baking powder",
+      "1/2 tsp salt",
+      "1/2 cup sugar (or coconut sugar or xylitol)",
+      "6 tbsp oil or butter",
+      "1 1/2 tbsp milk of choice",
+      "1 tsp pure vanilla extract",
+      "1/4 cup cream cheese or vegan cream cheese",
+      "1 1/2 tbsp powdered sugar or sugar free powdered sugar",
+      "equal parts cinnamon and sugar or xylitol if desired for coating"
+    ]
+  },
+  {
+    "index": 36,
+    "name": "keto-cookies-recipe",
+    "url": "https://chocolatecoveredkatie.com/2018/10/08/keto-cookies-recipe",
+    "ingredients": [
+      "1 cup finely ground almond flour",
+      "2-4 tbsp chocolate chips or sugar free chocolate chips",
+      "2 tbsp powdered sugar or powdered erythritol OR stevia equivalent",
+      "scant 1/4 tsp salt",
+      "1/8 tsp baking soda",
+      "2 tbsp coconut oil",
+      "1 tsp pure vanilla extract",
+      "2-3 tsp milk of choice, as needed"
+    ]
+  },
+  {
+    "index": 37,
+    "name": "keto-chocolate-cookies",
+    "url": "https://chocolatecoveredkatie.com/2019/12/16/keto-chocolate-cookies",
+    "ingredients": [
+      "1 cup finely ground almond flour",
+      "2 tbsp cocoa powder",
+      "scant 1/4 tsp salt",
+      "1/8 tsp baking soda",
+      "1/4 cup mini chocolate chips or sugar free chocolate chips",
+      "3 tbsp powdered sugar or powdered erythritol",
+      "2 tbsp milk of choice",
+      "1 tbsp coconut oil or additional milk",
+      "optional powdered sugar or erythritol to coat"
+    ]
+  },
+  {
+    "index": 38,
+    "name": "vegan-chocolate-chip-cookies-recipe",
+    "url": "https://chocolatecoveredkatie.com/vegan-chocolate-chip-cookies-recipe",
+    "ingredients": [
+      "1 cup white, oat, or spelt flour",
+      "1/2 tsp baking soda",
+      "1/4 tsp salt",
+      "1/4 cup sugar, unrefined if desired (For no sugar, try these Breakfast Cookies)",
+      "1/4 cup brown sugar or coconut sugar",
+      "1/3 cup chocolate chips",
+      "2 tbsp milk of choice, plus more if needed",
+      "2 tbsp oil or melted vegan butter",
+      "1/4 tsp pure vanilla extract"
+    ]
+  },
+  {
+    "index": 39,
+    "name": "keto-thin-mints-low-carb",
+    "url": "https://chocolatecoveredkatie.com/2019/05/16/keto-thin-mints-low-carb",
+    "ingredients": [
+      "2 tbsp cocoa powder",
+      "1 cup almond flour",
+      "1/8 tsp salt",
+      "1 tsp pure vanilla extract",
+      "1/8 tsp pure peppermint extract",
+      "pinch uncut stevia OR 3 tbsp pure maple syrup",
+      "Only if using stevia, add 3 tbsp water",
+      "1/2 cup chocolate chips or sugar free chocolate chips",
+      "1/4 tsp additional pure peppermint extract",
+      "optional 2 tsp oil"
+    ]
+  },
+  {
+    "index": 40,
+    "name": "healthy-oreos",
+    "url": "https://chocolatecoveredkatie.com/healthy-oreos",
+    "ingredients": [
+      "3/4 cup spelt, white, or oat flour",
+      "6 tbsp dutch cocoa powder – regular cocoa is fine; they just won’t taste as authentic",
+      "6 tbsp unrefined or regular sugar, or xylitol for sugar-free",
+      "1/4 tsp salt",
+      "1/4 tsp baking soda",
+      "1 tsp pure vanilla extract",
+      "1/4 cup vegetable or coconut oil",
+      "3 tbsp milk of choice",
+      "2 tbsp pure maple syrup, honey, or agave"
+    ]
+  },
+  {
+    "index": 41,
+    "name": "nutrition-facts-chocolate-chip-cookies",
+    "url": "https://chocolatecoveredkatie.com/nutrition-facts-chocolate-chip-cookies",
+    "ingredients": []
+  },
+  {
+    "index": 42,
+    "name": "vegan-peppermint-cookies-recipe",
+    "url": "https://chocolatecoveredkatie.com/vegan-peppermint-cookies-recipe",
+    "ingredients": [
+      "1 1/2 cups  white, spelt, or oat flour (For low carb, try these Keto Cookies)",
+      "3/4 tsp baking soda",
+      "1/2 tsp each: baking powder and salt",
+      "1/2 cup sugar, unrefined if desired",
+      "6 tbsp oil or melted vegan butter",
+      "1 1/2 tbsp milk of choice",
+      "1 tsp pure vanilla extract",
+      "1/4 tsp pure peppermint extract"
+    ]
+  },
+  {
+    "index": 43,
+    "name": "better-than-nutella",
+    "url": "https://chocolatecoveredkatie.com/better-than-nutella",
+    "ingredients": [
+      "2 cups hazelnuts (240g)",
+      "1/4 tsp pure vanilla extract",
+      "1/4 cup cocoa powder",
+      "1/3 cup sweetener of choice  (see above for options that work here)",
+      "1/4 tsp salt",
+      "1/2 cup milk of choice or 2 tbsp oil, optional"
+    ]
+  },
+  {
+    "index": 44,
+    "name": "cream-cheese-stuffed-cinnamon-sugar-pillow-cookies",
+    "url": "https://chocolatecoveredkatie.com/cream-cheese-stuffed-cinnamon-sugar-pillow-cookies",
+    "ingredients": [
+      "1 1/2 cup flour (spelt, white, or oat)",
+      "3/4 tsp baking soda",
+      "1/2 tsp baking powder",
+      "1/2 tsp salt",
+      "1/2 cup sugar (or coconut sugar or xylitol)",
+      "6 tbsp oil or butter",
+      "1 1/2 tbsp milk of choice",
+      "1 tsp pure vanilla extract",
+      "1/4 cup cream cheese or vegan cream cheese",
+      "1 1/2 tbsp powdered sugar or sugar free powdered sugar",
+      "equal parts cinnamon and sugar or xylitol if desired for coating"
+    ]
+  },
+  {
+    "index": 45,
+    "name": "lemon-meltaway-cookies",
+    "url": "https://chocolatecoveredkatie.com/2019/12/05/lemon-meltaway-cookies",
+    "ingredients": [
+      "1 cup flour (white, spelt, or Bob's gf work)",
+      "1/4 cup finely chopped walnuts, almonds, or pecans (can omit for nut free)",
+      "1/2 cup butter or coconut oil",
+      "1/4 cup powdered sugar, unrefined if desired",
+      "2 tsp lemon juice, plus 1 tsp zest (don’t omit)",
+      "if using coconut oil, add 1/8 tsp salt",
+      "optional additional powdered sugar for rolling"
+    ]
+  },
+  {
+    "index": 46,
+    "name": "lemon-meltaway-cookies",
+    "url": "https://chocolatecoveredkatie.com/lemon-meltaway-cookies",
+    "ingredients": [
+      "1 cup flour (white, spelt, or Bob's gf work)",
+      "1/4 cup finely chopped walnuts, almonds, or pecans (can omit for nut free)",
+      "1/2 cup butter or coconut oil",
+      "1/4 cup powdered sugar, unrefined if desired",
+      "2 tsp lemon juice, plus 1 tsp zest (don’t omit)",
+      "if using coconut oil, add 1/8 tsp salt",
+      "optional additional powdered sugar for rolling"
+    ]
+  },
+  {
+    "index": 47,
+    "name": "vegan-snickerdoodles",
+    "url": "https://chocolatecoveredkatie.com/vegan-snickerdoodles",
+    "ingredients": [
+      "1 1/2 cups spelt, white, or oat flour   ",
+      "3/4 tsp baking soda",
+      "1/2 tsp each: salt and baking powder",
+      "1/2 cup sugar, unrefined or xylitol if desired",
+      "6 tbsp oil or melted vegan butter",
+      "1 1/2 tbsp milk of choice",
+      "1 tsp pure vanilla extract",
+      "  equal parts cinnamon and sugar (or xylitol) for coating"
+    ]
+  },
+  {
+    "index": 48,
+    "name": "chocolate-no-bake-cookies",
+    "url": "https://chocolatecoveredkatie.com/chocolate-no-bake-cookies",
+    "ingredients": [
+      "1/4 cup cocoa powder",
+      "2 cups quick oats (For keto no-bakes, try these Fat Bombs)",
+      "1/4 tsp salt",
+      "1/2 cup peanut butter or allergy-friendly sub",
+      "1/2 cup pure maple syrup, honey, or agave (or 2/3 cup sugar and 1/2 cup milk of choice)",
+      "1/4 cup butter or coconut oil",
+      "optional 1/4 tsp pure vanilla extract",
+      "optional handful mini chocolate chips, shredded coconut, etc."
+    ]
+  }
+]
