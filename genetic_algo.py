@@ -15,14 +15,8 @@ def fitness_function(ing_list: List[int]) -> float:
 
 # selection
 def population_selection(population: List[dict]) -> List[dict]:
-    
-    # return random.choices(population, weights=[x["weight"] for x in population], k = 10)
-    # population_ = []
-    for pop in population:
-        pop["weight"] = fitness_function(pop["ingredients"])
-        # population_.append(pop)
-
-    population = random.choices(population, weights=[x["weight"] for x in population], k = len(population))
+    weights = [fitness_function(pop) for pop in population]
+    population = random.choices(population, weights=[fitness_function(pop) for pop in population], k = len(population))
 
     return population
 
@@ -161,16 +155,30 @@ def mutate_recipe(recipe):
     return recipe
 
 
-# mutated_recipe = mutate_recipe(recipe)
-# print(mutated_recipe)
-
-
 
 if __name__ == "__main__":
     with open("dummy.json") as f:
         recipes = json.load(f)
 
+    budget = 500
+    optimum = 10 # 10 * 0.7 + 10 * 0.3 = 7 + 3 = 10
+    mutation_rate = 0.2
+    crossover_rate = 0.8
+    crossover_func = uniform_crossover
+
+    # from the json we get only the ingredients for each recipe
+    population = [recipe["ingredients"] for recipe in recipes]
+    while budget >=0:
+        # make new population
+        new_population = population_selection(population)
+        # cossover
+        if random.random() < crossover_rate:
+            cross_over = crossover_population(new_population, crossover_func)
+        # mutation
+        if random.random() < mutation_rate:
+            for recipe in cross_over:
+                mutate_recipe(recipe)
+        # evaluation
+
     # print(population_selection(recipes)[0])
-    new_population = population_selection(recipes)
-    cross_over = crossover_population(new_population, uniform_crossover)
 
