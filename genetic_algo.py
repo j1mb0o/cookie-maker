@@ -4,6 +4,8 @@ from typing import List
 import pprint
 from consts import UNIQUE_INGREDIENTS, LIQUIDS, SOLIDS
 from math import ceil
+from tqdm import tqdm
+import time
 
 
 def fitness_function(ing_list: List[int]) -> float:
@@ -13,7 +15,7 @@ def fitness_function(ing_list: List[int]) -> float:
     health_sum = sum([x["health"] for x in ing_list])
     taste_sum = sum([x["taste"] for x in ing_list])
     # we prioritize health over taste
-    return 0.7 * health_sum + 0.3 * taste_sum
+    return (0.7 * health_sum + 0.3 * taste_sum) / len(ing_list)
 
 
 # selection
@@ -94,7 +96,7 @@ def uniform_crossover(parent1, parent2):
 
 # Function to apply crossover to an entire population
 def crossover_population(population, crossover_func):
-    new_population = []
+    population_ = []
 
     # Shuffle population to randomly pair them
     random.shuffle(population)
@@ -103,27 +105,27 @@ def crossover_population(population, crossover_func):
     # for i in range(0, len(population), 2):
     # parent1 = population[i]
     # parent2 = population[i+1]
-    while len(new_population) < len(population):
+    while len(population_) < len(population):
         parent1 = random.choice(population)
         parent2 = random.choice(population)
         # Perform crossover on the pair of parents
         offspring1, offspring2 = crossover_func(parent1, parent2)
 
         # Add the offspring to the new population
-        new_population.append(offspring1)
-        new_population.append(offspring2)
+        population_.append(offspring1)
+        population_.append(offspring2)
 
-    return new_population
+    return population_
 
 
 # mutation
-def mutate_recipe(recipe, mutation_type=2, mutation_rate=1):
+def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
     # Mutation: Change ingredient amount
     if mutation_type == 0:
         for ingredient in recipe["ingredients"]:
             if random.random() < mutation_rate:
-                ingredient["amount"] = int(
-                    ingredient["amount"] * random.uniform(0.25, 2)
+                ingredient["amount"] = (
+                    round(ingredient["amount"] * random.uniform(0.25, 2), 2)
                 )
 
     # Mutation: Change one ingredient to another
@@ -151,12 +153,14 @@ def mutate_recipe(recipe, mutation_type=2, mutation_rate=1):
                     current_ingredient["amount"]
                     if new_ingredient_name != "egg"
                     else ceil(current_ingredient["amount"] // 50)
-                )  # a mediu egg is around 50g
-                recipe["ingredients"][j]["ingredient"] = {
+                )  # a medium egg is around 50g
+                # recipe["ingredients"][j]["ingredient"] = {
+                recipe["ingredients"][j] = {
                     "ingredient": new_ingredient_name,
+                    "amount": new_ingredient_amount,
+                    "units": "g" if new_ingredient_name in SOLIDS else "ml",
                     "health": new_ingredient_scores["health"],
                     "taste": new_ingredient_scores["taste"],
-                    "amount": new_ingredient_amount,
                 }
 
         # Mutation: Addition of an ingredient
@@ -168,11 +172,11 @@ def mutate_recipe(recipe, mutation_type=2, mutation_rate=1):
                 1, 5
             )  # Random amount for the new ingredient
             new_ingredient_scores = UNIQUE_INGREDIENTS[new_ingredient_name].copy()
-            new_ingredient_scores = {
-                "health": recipe["ingredients"][0]["health"],
-                "taste": recipe["ingredients"][0]["taste"],
-            }
-            
+            # new_ingredient_scores = {
+            #     "health": recipe["ingredients"][0]["health"],
+            #     "taste": recipe["ingredients"][0]["taste"],
+            # }
+
             ingredient_exists = False
             for ingredient in recipe["ingredients"]:
                 if ingredient["ingredient"] == new_ingredient_name:
@@ -183,9 +187,10 @@ def mutate_recipe(recipe, mutation_type=2, mutation_rate=1):
                 recipe["ingredients"].append(
                     {
                         "ingredient": new_ingredient_name,
+                        "amount": new_ingredient_amount,
+                        "units": "g" if new_ingredient_name in SOLIDS else "ml",
                         "health": new_ingredient_scores["health"],
                         "taste": new_ingredient_scores["taste"],
-                        "amount": new_ingredient_amount,
                     }
                 )
 
@@ -200,28 +205,44 @@ def mutate_recipe(recipe, mutation_type=2, mutation_rate=1):
 
 
 if __name__ == "__main__":
-    with open("dummy.json") as f:
+    with open("recipes_expanded.json") as f:
         recipes = json.load(f)
 
-    budget = 500
-    optimum = 10  # 10 * 0.7 + 10 * 0.3 = 7 + 3 = 10
-    mutation_rate = 1  # change back to 0.2 after testing
+    budget = 5000
+    global_optimum = 10  # 10 * 0.7 + 10 * 0.3 = 7 + 3 = 10
+    optimum = 0
+    mutation_rate = 0.5  # change back to 0.2 after testing
     crossover_rate = 1
-    crossover_func = uniform_crossover
+    crossover_func = one_point_crossover
+    best_recipe = None
+
+    pbar = tqdm(total=5000)
 
     # from the json we get only the ingredients for each recipe
     population = [recipe["ingredients"] for recipe in recipes]
-    while budget >= 0:
-        # make new population
-        new_population = population_selection(population)
+    print(type(population))
+    while budget >= 0 and optimum < global_optimum:
+        if budget % 10 == 0:
+            pbar.update(10)
+
+        population = population_selection(population)
         # cossover
         if random.random() < crossover_rate:
-            cross_over = crossover_population(new_population, crossover_func)
+            population = crossover_population(population, crossover_func)
         # mutation
-        for recipe in cross_over:
-
-            if random.random() < mutation_rate:
-                mutate_recipe(recipe)
+        new_population = []
+        for recipe in population:
+            mut_type = random.randint(0, 4)
+            new_population.append(mutate_recipe(recipe, mutation_type=2, mutation_rate=mutation_rate))
         # evaluation
-
-    # print(population_selection(recipes)[0])
+        for recipe in new_population:
+            fitness_ = fitness_function(recipe["ingredients"])
+            if fitness_ > optimum:
+                optimum = fitness_
+                best_recipe = recipe
+        budget -= 1
+        population = [recipe["ingredients"] for recipe in new_population]
+        new_population.clear()
+    # print(best_recipe)
+    pprint.pprint(best_recipe)
+    print(f"Optimum: {optimum}")

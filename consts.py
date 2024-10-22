@@ -54,7 +54,6 @@ UNIQUE_INGREDIENTS = {
     'salted butter': {"health": 4, "taste": 9},
     'shredded coconut': {"health": 7, "taste": 8},
     'spelt flour': {"health": 8, "taste": 7},
-    'sugar': {"health": 3, "taste": 9},
     'tahini': {"health": 8, "taste": 7},
     'uncut stevia': {"health": 6, "taste": 5},
     'unsweetened shredded coconut': {"health": 7, "taste": 8},
@@ -83,6 +82,6 @@ SOLIDS = [
     'powdered erythritol', 'powdered sugar', 'protein powder', 
     'pumpkin pie spice', 'quick oats', 'regular sugar', 'rolled oats', 
     'salt', 'salted butter', 'shredded coconut', 'spelt flour', 
-    'sugar', 'tahini', 'uncut stevia', 'unsweetened shredded coconut', 
+    'tahini', 'uncut stevia', 'unsweetened shredded coconut', 
     'vegan butter', 'white flour', 'white sugar'
 ]
