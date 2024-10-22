@@ -106,8 +106,64 @@ def crossover_population(population, crossover_func):
 
 
 # mutation
-    def mutation_code():
-        pass
+def mutate_recipe(recipe):
+    # mutation_type = random.randint(0, 3)
+    mutation_type = 3
+    print("Mutation type:", mutation_type)
+    # Mutation: Change ingredient amount
+    if mutation_type == 0:
+        i = random.randint(0, len(recipe['ingredients']) - 1)
+        recipe['ingredients'][i] = recipe['ingredients'][i].copy()
+        # print("Old amount:",  recipe['ingredients'][i]['amount'])
+        recipe['ingredients'][i]['amount'] = int(recipe['ingredients'][i]['amount'] * random(0.25,2))
+        # print("New amount:", max(1, recipe['ingredients'][i]['amount'] + int(recipe['ingredients'][i]['amount'] * 0.15)))
+        # print("Ingredient:", recipe['ingredients'][i]['ingredient'])
+
+    # Mutation: Change one ingredient to another
+    elif mutation_type == 1:
+        j = random.randint(0, len(recipe['ingredients']) - 1)
+        recipe['ingredients'][j] = recipe['ingredients'][j].copy()
+
+        # Find a new ingredient that is different from the current one
+        current_ingredient = recipe['ingredients'][j]-['ingredient']
+        possible_substitutes = [ing for ing in unique_ingredients if ing['ingredient'] != current_ingredient]
+
+        if possible_substitutes:
+            new_ingredient = random.choice(possible_substitutes)
+            recipe['ingredients'][j]['ingredient'] = new_ingredient['ingredient']
+
+        # print("New ingredient:", recipe['ingredients'][j]['ingredient'])
+        # print("Old ingredient:", current_ingredient)
+
+
+    # Mutation: Addition of an ingredient
+    elif mutation_type == 2:
+        # new_ingredient = random.choice(unique_ingredients).copy()
+        new_ingredient = random.choice(unique_inredients).copy()
+        new_ingredient['amount'] = random.randint(1, 5)  # Random amount for the new ingredient
+        # recipe['ingredients'].append(new_ingredient)
+        # if the new ingredient is already in the recipe, add the amount to the existing ingredient and do not append a new ingredient in the recipe
+        if new_ingredient['ingredient'] in [ing['ingredient'] for ing in recipe['ingredients']]:
+            for ingredient in recipe['ingredients']:
+                if ingredient['ingredient'] == new_ingredient['ingredient']:
+                    ingredient['amount'] += new_ingredient['amount']
+                    break
+        else:
+            recipe['ingredients'].append(new_ingredient)
+        # print("New ingredient:", new_ingredient['ingredient'])
+        
+
+    # Mutation: Deletion of an ingredient
+    elif mutation_type == 3:
+        if len(recipe['ingredients']) > 1:
+            deleted_ing = recipe['ingredients'].pop(random.randint(0, len(recipe['ingredients']) - 1))
+        # print("Deleted ingredient:", deleted_ing['ingredient'])
+    return recipe
+
+
+# mutated_recipe = mutate_recipe(recipe)
+# print(mutated_recipe)
+
 
 
 if __name__ == "__main__":
