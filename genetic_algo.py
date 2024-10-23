@@ -34,8 +34,8 @@ def population_selection(population: List[dict]) -> List[dict]:
 # One-point crossover function
 def one_point_crossover(parent1, parent2):
     # assert len(parent1) == len(parent2), "Both parents must have the same length"
-    offspring1 = {}
-    offspring2 = {}
+    # offspring1 = {}
+    # offspring2 = {}
 
     crossover_point = random.randint(
         1, min(len(parent1), len(parent2)) - 1
@@ -43,19 +43,21 @@ def one_point_crossover(parent1, parent2):
 
     parent1, parent2 = parent1, parent2
 
-    offspring1["ingredients"] = parent1[:crossover_point] + parent2[crossover_point:]
-    offspring2["ingredients"] = parent2[:crossover_point] + parent1[crossover_point:]
+    # offspring1["ingredients"] = parent1[:crossover_point] + parent2[crossover_point:]
+    # offspring2["ingredients"] = parent2[:crossover_point] + parent1[crossover_point:]
+    offspring1 = parent1[:crossover_point] + parent2[crossover_point:]
+    offspring2 = parent2[:crossover_point] + parent1[crossover_point:]
 
-    offspring1["name"] = ""
-    offspring2["name"] = ""
+    # offspring1["name"] = ""
+    # offspring2["name"] = ""
 
     return offspring1, offspring2
 
 
 # Uniform crossover function (from the previous example)
 def uniform_crossover(parent1, parent2):
-    offspring1 = {}
-    offspring2 = {}
+    offspring1 = []
+    offspring2 = []
 
     parent1, parent2 = parent1, parent2
 
@@ -70,25 +72,22 @@ def uniform_crossover(parent1, parent2):
     elif len(parent2) < len(parent1):
         parent2 += [empty_ingredients] * (max_len - min_len)
 
-    offspring1["name"] = ""
-    offspring2["name"] = ""
-    offspring1["ingredients"] = []
-    offspring2["ingredients"] = []
+    
 
     for gene1, gene2 in zip(parent1, parent2):
         if random.random() > 0.5:
-            offspring1["ingredients"].append(gene1)
-            offspring2["ingredients"].append(gene2)
+            offspring1.append(gene1)
+            offspring2.append(gene2)
         else:
-            offspring1["ingredients"].append(gene2)
-            offspring2["ingredients"].append(gene1)
+            offspring1.append(gene2)
+            offspring2.append(gene1)
 
     # remove empty ingredients
-    offspring1["ingredients"] = [
-        x for x in offspring1["ingredients"] if x["ingredient"] is not None
+    offspring1 = [
+        x for x in offspring1 if x["ingredient"] is not None
     ]
-    offspring2["ingredients"] = [
-        x for x in offspring2["ingredients"] if x["ingredient"] is not None
+    offspring2 = [
+        x for x in offspring2 if x["ingredient"] is not None
     ]
 
     return offspring1, offspring2
@@ -101,10 +100,6 @@ def crossover_population(population, crossover_func):
     # Shuffle population to randomly pair them
     random.shuffle(population)
 
-    # Loop through population in pairs (assumes even number of individuals)
-    # for i in range(0, len(population), 2):
-    # parent1 = population[i]
-    # parent2 = population[i+1]
     while len(population_) < len(population):
         parent1 = random.choice(population)
         parent2 = random.choice(population)
@@ -122,7 +117,7 @@ def crossover_population(population, crossover_func):
 def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
     # Mutation: Change ingredient amount
     if mutation_type == 0:
-        for ingredient in recipe["ingredients"]:
+        for ingredient in recipe:
             if random.random() < mutation_rate:
                 ingredient["amount"] = (
                     round(ingredient["amount"] * random.uniform(0.25, 2), 2)
@@ -131,10 +126,10 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
     # Mutation: Change one ingredient to another
     if random.random() < mutation_rate:
         if mutation_type == 1:
-            j = random.randint(0, len(recipe["ingredients"]) - 1)
+            j = random.randint(0, len(recipe) - 1)
 
             # Find a new ingredient that is different from the current one
-            current_ingredient = recipe["ingredients"][j]
+            current_ingredient = recipe[j]
             if current_ingredient["units"] == "ml":
                 possible_substitutes = [
                     ing for ing in LIQUIDS if ing != current_ingredient["ingredient"]
@@ -155,7 +150,7 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
                     else ceil(current_ingredient["amount"] // 50)
                 )  # a medium egg is around 50g
                 # recipe["ingredients"][j]["ingredient"] = {
-                recipe["ingredients"][j] = {
+                recipe[j] = {
                     "ingredient": new_ingredient_name,
                     "amount": new_ingredient_amount,
                     "units": "g" if new_ingredient_name in SOLIDS else "ml",
@@ -178,13 +173,13 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
             # }
 
             ingredient_exists = False
-            for ingredient in recipe["ingredients"]:
+            for ingredient in recipe:
                 if ingredient["ingredient"] == new_ingredient_name:
                     ingredient["amount"] += new_ingredient_amount
                     ingredient_exists = True
                     break
             if not ingredient_exists:
-                recipe["ingredients"].append(
+                recipe.append(
                     {
                         "ingredient": new_ingredient_name,
                         "amount": new_ingredient_amount,
@@ -196,31 +191,32 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
 
         # Mutation: Deletion of an ingredient
         elif mutation_type == 3:
-            if len(recipe["ingredients"]) > 1:
-                recipe["ingredients"].pop(
-                    random.randint(0, len(recipe["ingredients"]) - 1)
+            if len(recipe) > 1:
+                recipe.pop(
+                    random.randint(0, len(recipe) - 1)
                 )
+
+    for ingredient in recipe:
+        if ingredient["amount"] > 500:
+            ingredient["amount"] = 500
 
     return recipe
 
 
-if __name__ == "__main__":
-    with open("recipes_expanded.json") as f:
-        recipes = json.load(f)
-
+def generate_recipe(recipe):
     budget = 5000
     global_optimum = 10  # 10 * 0.7 + 10 * 0.3 = 7 + 3 = 10
     optimum = 0
-    mutation_rate = 0.5  # change back to 0.2 after testing
-    crossover_rate = 1
-    crossover_func = one_point_crossover
+    mutation_rate = 0.3 # change back to 0.2 after testing
+    crossover_rate = 0.8
+    # crossover_func = uniform_crossover
     best_recipe = None
 
     pbar = tqdm(total=5000)
 
     # from the json we get only the ingredients for each recipe
     population = [recipe["ingredients"] for recipe in recipes]
-    print(type(population))
+    # print(type(population))
     while budget >= 0 and optimum < global_optimum:
         if budget % 10 == 0:
             pbar.update(10)
@@ -228,6 +224,7 @@ if __name__ == "__main__":
         population = population_selection(population)
         # cossover
         if random.random() < crossover_rate:
+            crossover_func = random.choice([one_point_crossover, uniform_crossover])
             population = crossover_population(population, crossover_func)
         # mutation
         new_population = []
@@ -236,13 +233,22 @@ if __name__ == "__main__":
             new_population.append(mutate_recipe(recipe, mutation_type=2, mutation_rate=mutation_rate))
         # evaluation
         for recipe in new_population:
-            fitness_ = fitness_function(recipe["ingredients"])
+            fitness_ = fitness_function(recipe)
             if fitness_ > optimum:
                 optimum = fitness_
                 best_recipe = recipe
         budget -= 1
-        population = [recipe["ingredients"] for recipe in new_population]
+        # population = [recipe["ingredients"] for recipe in new_population]
+        population = new_population.copy()
         new_population.clear()
     # print(best_recipe)
     pprint.pprint(best_recipe)
     print(f"Optimum: {optimum}")
+    print(len(best_recipe))
+
+
+if __name__ == "__main__":
+    with open("recipes_expanded.json") as f:
+        recipes = json.load(f)
+
+    generate_recipe(recipes)
