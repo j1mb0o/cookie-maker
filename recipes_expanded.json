@@ -5,7 +5,7 @@
     "url": "https://chocolatecoveredkatie.com/healthy-pumpkin-cookies",
     "ingredients": [
       {
-        "ingredient": "quick oats",
+        "ingredient": "oats",
         "amount": 180.0,
         "units": "g",
         "health": 9,
@@ -859,7 +859,7 @@
         "taste": 8
       },
       {
-        "ingredient": "quick oats",
+        "ingredient": "oats",
         "amount": 480.0,
         "units": "g",
         "health": 9,
@@ -2644,7 +2644,7 @@
         "taste": 8
       },
       {
-        "ingredient": "quick oats",
+        "ingredient": "oats",
         "amount": 480.0,
         "units": "g",
         "health": 9,

@@ -127,7 +127,7 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
         for ingredient in recipe:
             if random.random() < mutation_rate:
                 ingredient["amount"] = (
-                    min(round(ingredient["amount"] * random.uniform(0.25, 1.5), 2), 500)
+                    min(round(ingredient["amount"] * random.uniform(0.75, 1.5), 2), 500)
                 )
 
     # Mutation: Change one ingredient to another

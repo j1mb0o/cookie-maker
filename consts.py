@@ -1,6 +1,3 @@
-# LIQUIDS = ['milk', 'oil', 'water', 'butter', 'extract', 'syrup']
-
-# SOLIDS = [ ing for ing in UNIQUE_INGREDIENTS.keys() if ing not in LIQUIDS ]
 
 UNIQUE_INGREDIENTS = {
     'pure peppermint extract': {"health": 6, "taste": 7},
@@ -47,7 +44,6 @@ UNIQUE_INGREDIENTS = {
     'pure maple syrup': {"health": 6, "taste": 9},
     'pure vanilla': {"health": 5, "taste": 7},
     'pure vanilla extract': {"health": 5, "taste": 7},
-    'quick oats': {"health": 9, "taste": 7},
     'regular sugar': {"health": 3, "taste": 9},
     'rolled oats': {"health": 9, "taste": 7},
     'salt': {"health": 3, "taste": 9},
@@ -80,7 +76,7 @@ SOLIDS = [
     'freeze-dried raspberries', 'hazelnuts', 'mashed banana', 
     'nut butter', 'oat flour', 'oats', 'peanut butter', 
     'powdered erythritol', 'powdered sugar', 'protein powder', 
-    'pumpkin pie spice', 'quick oats', 'regular sugar', 'rolled oats', 
+    'pumpkin pie spice', 'regular sugar', 'rolled oats', 
     'salt', 'salted butter', 'shredded coconut', 'spelt flour', 
     'tahini', 'uncut stevia', 'unsweetened shredded coconut', 
     'vegan butter', 'white flour', 'white sugar'
