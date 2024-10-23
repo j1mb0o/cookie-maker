@@ -209,7 +209,7 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
         # Mutation: Deletion of an ingredient
         elif mutation_type == 3:
             # Ensure that the recipe has at least 3 ingredients
-            if len(recipe) > 3:
+            if len(recipe) > 5:
                 recipe.pop(
                     random.randint(0, len(recipe) - 1)
                 )
@@ -270,7 +270,7 @@ def generate_recipe(recipes):
                     break
 
 
-    return best_recipe
+    return best_recipe, optimum
 
 
 def clean_recipe(recipe):
