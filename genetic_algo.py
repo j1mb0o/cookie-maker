@@ -36,9 +36,17 @@ def one_point_crossover(parent1, parent2):
     # assert len(parent1) == len(parent2), "Both parents must have the same length"
     # offspring1 = {}
     # offspring2 = {}
-
+    if len(parent1) == 1:
+        print("Parent1 is empty")
+        print(parent1)
+        exit()
+    if len(parent2) == 1:
+        print("Parent2 is empty")
+        print(parent2)
+        exit()
+    lp1, lp2 = len(parent1), len(parent2)
     crossover_point = random.randint(
-        1, min(len(parent1), len(parent2)) - 1
+        1, min(lp1, lp2) - 1
     )  # Exclude endpoints
 
     parent1, parent2 = parent1, parent2
@@ -126,10 +134,14 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
     if mutation_type == 0:
         for ingredient in recipe:
             if random.random() < mutation_rate:
+                original_amount = ingredient["amount"]
+                multiplier = random.uniform(0.75, 1.25)
+                new_amount = original_amount * multiplier
+                # print(f"Original amount: {original_amount}, Multiplier: {multiplier}, New amount: {new_amount}")
                 ingredient["amount"] = (
-                    min(round(ingredient["amount"] * random.uniform(0.75, 1.5), 2), 500)
+                    min(round(new_amount,2), 400)
                 )
-
+                # print(f"New amount: {ingredient['amount']}")
     # Mutation: Change one ingredient to another
     if random.random() < mutation_rate:
         if mutation_type == 1:
@@ -154,15 +166,15 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
                 new_ingredient_name = recipe[0]["ingredient"]
                 for ingredient in recipe:
                     if ingredient["ingredient"] == new_ingredient_name:
-                        ingredient["amount"] += current_ingredient["amount"]
+                        ingredient["amount"] = min(ingredient["amount"] + current_ingredient["amount"], 400)
                         exitst = True
                         break
                 if not exitst:
                     recipe[j] = {
                         "ingredient": new_ingredient_name,
-                        "amount": (current_ingredient["amount"]
+                        "amount": min((current_ingredient["amount"]
                                    if new_ingredient_name != "egg"
-                                   else ceil(current_ingredient["amount"] // 50)),
+                                   else ceil(current_ingredient["amount"] // 50)), 400),
                         "units": "g" if new_ingredient_name in SOLIDS else "ml",
                         "health": new_ingredient_scores["health"],
                         "taste": new_ingredient_scores["taste"],
@@ -180,14 +192,14 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
             ingredient_exists = False
             for ingredient in recipe:
                 if ingredient["ingredient"] == new_ingredient_name:
-                    ingredient["amount"] += new_ingredient_amount
+                    ingredient["amount"] = min(ingredient["amount"] + new_ingredient_amount, 400)
                     ingredient_exists = True
                     break
             if not ingredient_exists:
                 recipe.append(
                     {
                         "ingredient": new_ingredient_name,
-                        "amount": round(new_ingredient_amount,2),
+                        "amount": min(round(new_ingredient_amount,2), 400),
                         "units": "g" if new_ingredient_name in SOLIDS else "ml",
                         "health": new_ingredient_scores["health"],
                         "taste": new_ingredient_scores["taste"],
@@ -196,19 +208,20 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
 
         # Mutation: Deletion of an ingredient
         elif mutation_type == 3:
-            if len(recipe) > 1:
+            # Ensure that the recipe has at least 3 ingredients
+            if len(recipe) > 3:
                 recipe.pop(
                     random.randint(0, len(recipe) - 1)
                 )
 
-    for ingredient in recipe:
-        if ingredient["amount"] > 500:
-            ingredient["amount"] = 500
+    # for ingredient in recipe:
+    #     if ingredient["amount"] > 500:
+    #         ingredient["amount"] = 500
 
     return recipe
 
 
-def generate_recipe(recipe):
+def generate_recipe(recipes):
     budget = 5000
     global_optimum = 10  # 10 * 0.7 + 10 * 0.3 = 7 + 3 = 10
     optimum = 0
@@ -232,6 +245,7 @@ def generate_recipe(recipe):
             crossover_func = random.choice([one_point_crossover, uniform_crossover])
             population = crossover_population(population, crossover_func=crossover_func)
         # mutation
+        population = [clean_recipe(recipe) for recipe in population]
         new_population = []
         for recipe in population:
             mut_type = random.randint(0, 4)
@@ -247,13 +261,26 @@ def generate_recipe(recipe):
         # population = [recipe["ingredients"] for recipe in new_population]
         population = new_population.copy()
         new_population.clear()
-    # print(best_recipe)
-    pprint.pprint(best_recipe)
-    print(f"Optimum: {optimum}")
-    print(len(best_recipe))
+
+        more_than_500 = False
+        for recipe in population:
+            for ingredient in recipe:
+                if ingredient["amount"] > 500:
+                    more_than_500 = True
+                    break
+
+
+    return best_recipe
 
 
 def clean_recipe(recipe):
+
+    more_than_500 = False
+    for ingredient in recipe:
+        if ingredient["amount"] > 500:
+            more_than_500 = True
+            break
+
     unique_ingredients = {}
     for ingredient in recipe:
         name = ingredient["ingredient"]
@@ -267,7 +294,7 @@ def clean_recipe(recipe):
     for ingredient_name, ingredient_stats in zip(unique_ingredients.keys(), unique_ingredients.values()):
         final_ingrediens.append({
             "ingredient": ingredient_name,
-            "amount": min(round(ingredient_stats["amount"], 2), 500),
+            "amount": min(round(ingredient_stats["amount"], 2), 400),
             "units": ingredient_stats["units"],
             "health": ingredient_stats["health"],
             "taste": ingredient_stats["taste"]
@@ -277,27 +304,5 @@ def clean_recipe(recipe):
 if __name__ == "__main__":
     with open("recipes_expanded.json") as f:
         recipes = json.load(f)
-    # test_recipe = [{'amount': 500,
-    #         'health': 8,
-    #         'ingredient': 'cocoa powder',
-    #         'taste': 8,
-    #         'units': 'g'},
-    #         {'amount': 240.0,
-    #         'health': 9,
-    #         'ingredient': 'almond flour',
-    #         'taste': 7,
-    #         'units': 'g'},
-    #         {'amount': 80.0, 'health': 6, 'ingredient': 'honey', 'taste': 8, 'units': 'g'},
-    #         {'amount': 10.0,
-    #         'health': 7,
-    #         'ingredient': 'lemon juice',
-    #         'taste': 6,
-    #         'units': 'g'},
-    #         {'amount': 60.0,
-    #         'health': 8,
-    #         'ingredient': 'cocoa powder',
-    #         'taste': 8,
-    #         'units': 'g'}]
-    # clean_recipe(recipe=test_recipe)
-
+    
     generate_recipe(recipes)
