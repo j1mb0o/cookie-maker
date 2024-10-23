@@ -267,7 +267,7 @@ def clean_recipe(recipe):
     for ingredient_name, ingredient_stats in zip(unique_ingredients.keys(), unique_ingredients.values()):
         final_ingrediens.append({
             "ingredient": ingredient_name,
-            "amount": min(round(ingredient_stats["amount"], 2), 2),
+            "amount": min(round(ingredient_stats["amount"], 2), 500),
             "units": ingredient_stats["units"],
             "health": ingredient_stats["health"],
             "taste": ingredient_stats["taste"]
