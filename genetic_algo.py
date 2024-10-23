@@ -259,6 +259,7 @@ def clean_recipe(recipe):
         name = ingredient["ingredient"]
         if name in unique_ingredients:
             unique_ingredients[name]["amount"] += ingredient["amount"]
+
         else:
             unique_ingredients[name] = ingredient
 
@@ -266,7 +267,7 @@ def clean_recipe(recipe):
     for ingredient_name, ingredient_stats in zip(unique_ingredients.keys(), unique_ingredients.values()):
         final_ingrediens.append({
             "ingredient": ingredient_name,
-            "amount": ingredient_stats["amount"],
+            "amount": min(round(ingredient_stats["amount"], 2), 2),
             "units": ingredient_stats["units"],
             "health": ingredient_stats["health"],
             "taste": ingredient_stats["taste"]
