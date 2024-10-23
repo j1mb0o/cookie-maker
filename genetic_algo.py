@@ -62,15 +62,15 @@ def uniform_crossover(parent1, parent2):
     parent1, parent2 = parent1, parent2
 
     # Create empty ingredients to fill in the gaps
-    empty_ingredients = {"ingredient": None, "health": 0, "taste": 0}
+    # empty_ingredients = {"ingredient": None, "health": 0, "taste": 0}
 
     min_len = min(len(parent1), len(parent2))
     max_len = max(len(parent1), len(parent2))
 
-    if len(parent1) < len(parent2):
-        parent1 += [empty_ingredients] * (max_len - min_len)
-    elif len(parent2) < len(parent1):
-        parent2 += [empty_ingredients] * (max_len - min_len)
+    # if len(parent1) < len(parent2):
+    #     parent1 += [empty_ingredients] * (max_len - min_len)
+    # elif len(parent2) < len(parent1):
+    #     parent2 += [empty_ingredients] * (max_len - min_len)
 
     
 
@@ -82,13 +82,20 @@ def uniform_crossover(parent1, parent2):
             offspring1.append(gene2)
             offspring2.append(gene1)
 
+    if len(parent1) > len(parent2):
+        offspring1 += parent1[len(parent2):]
+        offspring2 += parent1[len(parent2):]
+    elif len(parent2) > len(parent1):
+        offspring1 += parent2[len(parent1):]
+        offspring2 += parent2[len(parent1):]
+
     # remove empty ingredients
-    offspring1 = [
-        x for x in offspring1 if x["ingredient"] is not None
-    ]
-    offspring2 = [
-        x for x in offspring2 if x["ingredient"] is not None
-    ]
+    # offspring1 = [
+    #     x for x in offspring1 if x["ingredient"] is not None
+    # ]
+    # offspring2 = [
+    #     x for x in offspring2 if x["ingredient"] is not None
+    # ]
 
     return offspring1, offspring2
 
@@ -120,7 +127,7 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
         for ingredient in recipe:
             if random.random() < mutation_rate:
                 ingredient["amount"] = (
-                    round(ingredient["amount"] * random.uniform(0.25, 2), 2)
+                    min(round(ingredient["amount"] * random.uniform(0.25, 1.5), 2), 500)
                 )
 
     # Mutation: Change one ingredient to another
@@ -223,12 +230,12 @@ def generate_recipe(recipe):
         # cossover
         if random.random() < crossover_rate:
             crossover_func = random.choice([one_point_crossover, uniform_crossover])
-            population = crossover_population(population, one_point_crossover)
+            population = crossover_population(population, crossover_func=crossover_func)
         # mutation
         new_population = []
         for recipe in population:
             mut_type = random.randint(0, 4)
-            new_population.append(mutate_recipe(recipe, mutation_type=1, mutation_rate=mutation_rate))
+            new_population.append(mutate_recipe(recipe, mutation_type=mut_type, mutation_rate=mutation_rate))
         # evaluation
         clean_recipes = [clean_recipe(recipe) for recipe in new_population]
         for recipe in clean_recipes:
