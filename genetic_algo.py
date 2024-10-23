@@ -230,7 +230,8 @@ def generate_recipe(recipe):
             mut_type = random.randint(0, 4)
             new_population.append(mutate_recipe(recipe, mutation_type=1, mutation_rate=mutation_rate))
         # evaluation
-        for recipe in new_population:
+        clean_recipes = [clean_recipe(recipe) for recipe in new_population]
+        for recipe in clean_recipes:
             fitness_ = fitness_function(recipe)
             if fitness_ > optimum:
                 optimum = fitness_
@@ -245,8 +246,50 @@ def generate_recipe(recipe):
     print(len(best_recipe))
 
 
+def clean_recipe(recipe):
+    unique_ingredients = {}
+    for ingredient in recipe:
+        name = ingredient["ingredient"]
+        if name in unique_ingredients:
+            unique_ingredients[name]["amount"] += ingredient["amount"]
+        else:
+            unique_ingredients[name] = ingredient
+
+    final_ingrediens = []
+    for ingredient_name, ingredient_stats in zip(unique_ingredients.keys(), unique_ingredients.values()):
+        final_ingrediens.append({
+            "ingredient": ingredient_name,
+            "amount": ingredient_stats["amount"],
+            "units": ingredient_stats["units"],
+            "health": ingredient_stats["health"],
+            "taste": ingredient_stats["taste"]
+        })
+    return final_ingrediens
+
 if __name__ == "__main__":
     with open("recipes_expanded.json") as f:
         recipes = json.load(f)
+    # test_recipe = [{'amount': 500,
+    #         'health': 8,
+    #         'ingredient': 'cocoa powder',
+    #         'taste': 8,
+    #         'units': 'g'},
+    #         {'amount': 240.0,
+    #         'health': 9,
+    #         'ingredient': 'almond flour',
+    #         'taste': 7,
+    #         'units': 'g'},
+    #         {'amount': 80.0, 'health': 6, 'ingredient': 'honey', 'taste': 8, 'units': 'g'},
+    #         {'amount': 10.0,
+    #         'health': 7,
+    #         'ingredient': 'lemon juice',
+    #         'taste': 6,
+    #         'units': 'g'},
+    #         {'amount': 60.0,
+    #         'health': 8,
+    #         'ingredient': 'cocoa powder',
+    #         'taste': 8,
+    #         'units': 'g'}]
+    # clean_recipe(recipe=test_recipe)
 
     generate_recipe(recipes)
