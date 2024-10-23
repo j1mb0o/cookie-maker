@@ -138,39 +138,37 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
                 possible_substitutes = [
                     ing for ing in SOLIDS if ing != current_ingredient["ingredient"]
                 ]
-            # possible_substitutes = [ing for ing in UNIQUE_INGREDIENTS.keys() if ing != current_ingredient]
 
             if possible_substitutes:
                 new_ingredient_name = random.choice(possible_substitutes)
-                # new_ingredient_name = 'egg'
                 new_ingredient_scores = UNIQUE_INGREDIENTS[new_ingredient_name].copy()
-                new_ingredient_amount = (
-                    current_ingredient["amount"]
-                    if new_ingredient_name != "egg"
-                    else ceil(current_ingredient["amount"] // 50)
-                )  # a medium egg is around 50g
-                # recipe["ingredients"][j]["ingredient"] = {
-                recipe[j] = {
-                    "ingredient": new_ingredient_name,
-                    "amount": new_ingredient_amount,
-                    "units": "g" if new_ingredient_name in SOLIDS else "ml",
-                    "health": new_ingredient_scores["health"],
-                    "taste": new_ingredient_scores["taste"],
-                }
+
+                exitst = False
+                new_ingredient_name = recipe[0]["ingredient"]
+                for ingredient in recipe:
+                    if ingredient["ingredient"] == new_ingredient_name:
+                        ingredient["amount"] += current_ingredient["amount"]
+                        exitst = True
+                        break
+                if not exitst:
+                    recipe[j] = {
+                        "ingredient": new_ingredient_name,
+                        "amount": (current_ingredient["amount"]
+                                   if new_ingredient_name != "egg"
+                                   else ceil(current_ingredient["amount"] // 50)),
+                        "units": "g" if new_ingredient_name in SOLIDS else "ml",
+                        "health": new_ingredient_scores["health"],
+                        "taste": new_ingredient_scores["taste"],
+                    }
 
         # Mutation: Addition of an ingredient
         elif mutation_type == 2:
 
             new_ingredient_name = random.choice(LIQUIDS + SOLIDS)
-            # new_ingredient_name = recipe["ingredients"][0]["ingredient"]
             new_ingredient_amount = random.randint(
                 1, 5
-            )  # Random amount for the new ingredient
+            )
             new_ingredient_scores = UNIQUE_INGREDIENTS[new_ingredient_name].copy()
-            # new_ingredient_scores = {
-            #     "health": recipe["ingredients"][0]["health"],
-            #     "taste": recipe["ingredients"][0]["taste"],
-            # }
 
             ingredient_exists = False
             for ingredient in recipe:
@@ -182,7 +180,7 @@ def mutate_recipe(recipe, mutation_type=0, mutation_rate=0.2):
                 recipe.append(
                     {
                         "ingredient": new_ingredient_name,
-                        "amount": new_ingredient_amount,
+                        "amount": round(new_ingredient_amount,2),
                         "units": "g" if new_ingredient_name in SOLIDS else "ml",
                         "health": new_ingredient_scores["health"],
                         "taste": new_ingredient_scores["taste"],
@@ -225,12 +223,12 @@ def generate_recipe(recipe):
         # cossover
         if random.random() < crossover_rate:
             crossover_func = random.choice([one_point_crossover, uniform_crossover])
-            population = crossover_population(population, crossover_func)
+            population = crossover_population(population, one_point_crossover)
         # mutation
         new_population = []
         for recipe in population:
             mut_type = random.randint(0, 4)
-            new_population.append(mutate_recipe(recipe, mutation_type=2, mutation_rate=mutation_rate))
+            new_population.append(mutate_recipe(recipe, mutation_type=1, mutation_rate=mutation_rate))
         # evaluation
         for recipe in new_population:
             fitness_ = fitness_function(recipe)
