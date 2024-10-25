@@ -1,153 +1,163 @@
 [
   {
-    "Banana Oat Almond Crunch": [
+    "creative_name": "\"Banana Almond Bliss Bites\"",
+    "fitness_value": 8.4,
+    "recipe": [
       {
         "ingredient": "mashed banana",
-        "amount": 400,
+        "amount": 155.68,
         "units": "g",
         "health": 9,
         "taste": 7
+      },
+      {
+        "ingredient": "finely ground almond flour",
+        "amount": 66.69,
+        "units": "g",
+        "health": 9,
+        "taste": 7
+      }
+    ],
+    "creativity_score": 85.71428571428572
+  },
+  {
+    "creative_name": "Raspberry Banana Oasis Cruncher",
+    "fitness_value": 8.34,
+    "recipe": [
+      {
+        "ingredient": "freeze-dried raspberries",
+        "amount": 370.19,
+        "units": "g",
+        "health": 9,
+        "taste": 6
       },
       {
         "ingredient": "oats",
-        "amount": 19.74,
+        "amount": 22.1,
         "units": "g",
         "health": 9,
         "taste": 7
       },
       {
-        "ingredient": "rolled oats",
-        "amount": 0.96,
+        "ingredient": "finely ground almond flour",
+        "amount": 24.13,
         "units": "g",
         "health": 9,
         "taste": 7
       },
       {
         "ingredient": "almond flour",
-        "amount": 27,
+        "amount": 4,
+        "units": "g",
+        "health": 9,
+        "taste": 7
+      },
+      {
+        "ingredient": "mashed banana",
+        "amount": 5,
         "units": "g",
         "health": 9,
         "taste": 7
       }
     ],
-    "fitness_value": 8.4
+    "creativity_score": 81.81818181818181
   },
   {
-    "Almond Oat Crunch": [
-      {
-        "ingredient": "finely ground almond flour",
-        "amount": 113.08,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      },
-      {
-        "ingredient": "oats",
-        "amount": 30.8,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      },
+    "creative_name": "Banana Almond Harvest Crunch",
+    "fitness_value": 8.4,
+    "recipe": [
       {
         "ingredient": "rolled oats",
-        "amount": 9,
+        "amount": 400,
+        "units": "g",
+        "health": 9,
+        "taste": 7
+      },
+      {
+        "ingredient": "finely ground almond flour",
+        "amount": 101.79,
+        "units": "g",
+        "health": 9,
+        "taste": 7
+      },
+      {
+        "ingredient": "mashed banana",
+        "amount": 7.77,
         "units": "g",
         "health": 9,
         "taste": 7
       }
     ],
-    "fitness_value": 8.4
+    "creativity_score": 77.77777777777779
   },
   {
-    "Banana Almond Cocoa Crunch": [
+    "creative_name": "Banana Oat Cocoa Crunch Bombshell",
+    "fitness_value": 8.3,
+    "recipe": [
       {
-        "ingredient": "dutch cocoa powder",
-        "amount": 341.39,
+        "ingredient": "rolled oats",
+        "amount": 400,
+        "units": "g",
+        "health": 9,
+        "taste": 7
+      },
+      {
+        "ingredient": "mashed banana",
+        "amount": 29.06,
+        "units": "g",
+        "health": 9,
+        "taste": 7
+      },
+      {
+        "ingredient": "cocoa powder",
+        "amount": 26.36,
         "units": "g",
         "health": 8,
         "taste": 8
       },
       {
-        "ingredient": "mashed banana",
-        "amount": 67.95,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      },
-      {
-        "ingredient": "finely ground almond flour",
-        "amount": 49.2,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      },
-      {
-        "ingredient": "rolled oats",
-        "amount": 2,
+        "ingredient": "almond flour",
+        "amount": 7.83,
         "units": "g",
         "health": 9,
         "taste": 7
       }
     ],
-    "fitness_value": 8.3
+    "creativity_score": 77.77777777777779
   },
   {
-    "Almond Oat Fusion Crunch": [
+    "creative_name": "\"Pumpkin Almond Harvest Crunch\"",
+    "fitness_value": 8.325,
+    "recipe": [
       {
-        "ingredient": "rolled oats",
+        "ingredient": "canned pumpkin",
         "amount": 400,
         "units": "g",
         "health": 9,
+        "taste": 6
+      },
+      {
+        "ingredient": "rolled oats",
+        "amount": 60.28,
+        "units": "g",
+        "health": 9,
         "taste": 7
       },
       {
         "ingredient": "finely ground almond flour",
-        "amount": 21.39,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      },
-      {
-        "ingredient": "almond flour",
-        "amount": 4.39,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      },
-      {
-        "ingredient": "oats",
-        "amount": 19.68,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      }
-    ],
-    "fitness_value": 8.4
-  },
-  {
-    "Banana Oat Crunch": [
-      {
-        "ingredient": "almond flour",
-        "amount": 240.08,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      },
-      {
-        "ingredient": "mashed banana",
-        "amount": 112.55,
+        "amount": 41.09,
         "units": "g",
         "health": 9,
         "taste": 7
       },
       {
         "ingredient": "oats",
-        "amount": 5.87,
+        "amount": 21.44,
         "units": "g",
         "health": 9,
         "taste": 7
       }
     ],
-    "fitness_value": 8.4
+    "creativity_score": 84.61538461538461
   }
 ]
