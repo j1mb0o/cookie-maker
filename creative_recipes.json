@@ -1,26 +1,5 @@
 [
   {
-    "creative_name": "\"Banana Almond Bliss Bites\"",
-    "fitness_value": 8.4,
-    "recipe": [
-      {
-        "ingredient": "mashed banana",
-        "amount": 155.68,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      },
-      {
-        "ingredient": "finely ground almond flour",
-        "amount": 66.69,
-        "units": "g",
-        "health": 9,
-        "taste": 7
-      }
-    ],
-    "creativity_score": 85.71428571428572
-  },
-  {
     "creative_name": "Raspberry Banana Oasis Cruncher",
     "fitness_value": 8.34,
     "recipe": [

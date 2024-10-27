@@ -30,9 +30,11 @@ original_recipes = [
     for recipe in recipes
 ]
 
-for _ in range(5):
+for _ in range(4):
     temp = {}
     recipe, fitness_value = generate_recipe(recipes)
+    if len(recipe) < 3:
+        continue
     recipe_items = [i["ingredient"] for i in recipe]
     # for i in recipe:
     #     print(i["ingredient"])
